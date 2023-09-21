@@ -1,0 +1,88 @@
+@import "variables";
+@import "mixins";
+
+* {
+	box-sizing: border-box;
+}
+
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+	padding: 0;
+}
+
+html {
+	-webkit-font-smoothing: antialiased;
+	scroll-behavior: smooth;
+}
+
+html,
+body,
+input,
+textarea,
+button,
+select {
+	font-family: "Poppins", sans-serif;
+	font-weight: 400;
+	color: $text-black;
+	font-size: 16px;
+}
+
+button {
+	outline: none !important;
+}
+
+/* Containers */
+.container {
+	margin: 2em auto;
+	padding: 0 2em;
+	max-width: 1200px;
+}
+
+.container-limited {
+	max-width: 768px;
+	margin: 2em auto;
+	padding: 0 2em;
+}
+
+@media (max-width: 576px) {
+	.container,
+	.container-limited {
+		margin: 1em auto;
+		padding: 0 1em;
+	}
+}
+/* Containers -- End */
+
+.btn {
+	border: none;
+	cursor: pointer;
+	margin: 1em 0;
+	padding: .5em 2em;
+	border-radius: .5em;
+	background-color: $primary-color;
+	color: $text-white;
+
+	&:disabled {
+		background-color: $dark-grey;
+		cursor: not-allowed;
+	}
+}
+
+::-webkit-scrollbar {
+	width: 0.5em;
+	height: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: $light-grey;
+	border-radius: 100em;
+}

@@ -1,0 +1,90 @@
+@import "variables";
+@import "mixins";
+
+.main {
+    .previous-uploads {
+        margin: 2em 0;
+        
+        & > h3 {
+            text-align: center
+        }
+    }
+
+    form {
+        @include flex-center-column;
+
+        label {
+            text-align: center;
+            font-weight: 600;
+        }
+
+        input {
+            border: .1em solid $text-black;
+            padding: .3em;
+            border-radius: .3em;
+        }
+    }
+
+    .results {
+        text-align: center;
+        margin: 2em 0;
+
+        input {
+            width: 100%;
+            max-width: 40em;
+            margin: 1em auto;
+            padding: .3em;
+            border-radius: .3em;
+            border: .125em solid $text-black;
+            outline: none;
+            transition: all .3s ease-in-out;
+
+            &:focus {
+                border-color: $secondary-color;
+            }
+        }
+
+        .cards-wrap {
+            @include flex-center;
+            gap: 1em;
+
+            .card {
+                width: 10em;
+                background-color: $tertiary-color;
+                padding: 1em;
+                border-radius: .5em;
+            }
+        }
+    }
+
+    .table-wrap {
+        width: 100%;
+        max-width: 25em;
+        max-height: 20em;
+        overflow: auto;
+        margin: 1em auto;
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+
+            thead {
+                position: sticky;
+                top: 0;
+                background-color: $text-white;
+            }
+
+            th, td {
+                padding: .5em;
+                border: .1em solid $text-black;
+            }
+
+            th, td {
+                &:first-child {
+                    border-right: none;
+                }
+            }
+        }
+    }
+}
